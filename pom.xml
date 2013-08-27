@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<groupId>org.x4444</groupId>
+	<artifactId>job1</artifactId>
+	<modelVersion>4.0.0</modelVersion>
+	<name>job1</name>
+	<packaging>jar</packaging>
+	<version>1.0</version>
+	<repositories>
+		<repository>
+			<id>Spray.cc repository</id>
+			<url>http://repo.spray.cc</url>
+		</repository>
+		<repository>
+			<id>Akka repository</id>
+			<url>http://repo.akka.io/releases</url>
+		</repository>
+	</repositories>
+	<dependencies>
+		<dependency> <!-- Spark dependency -->
+			<groupId>org.spark-project</groupId>
+			<artifactId>spark-core_2.9.3</artifactId>
+			<version>0.7.3</version>
+		</dependency>
+	</dependencies>
+</project>
