@@ -8,7 +8,7 @@ public class Table1Hdfs extends AbsTableHdfs {
 
   public Table1Hdfs() {
     words20 = readFile("/words20.txt");
-    defaultFilePatStr = "table1";
+    defaultFilePathStr = "table1";
   }
 
   public static void main(String[] args) throws Exception {

@@ -14,7 +14,7 @@ public class Table2Hdfs extends AbsTableHdfs {
   public Table2Hdfs() {
     words = readFile("/words.txt");
     words20 = readFile("/words20.txt");
-    defaultFilePatStr = "table2";
+    defaultFilePathStr = "table2";
   }
 
   public static void main(String[] args) throws Exception {

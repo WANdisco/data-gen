@@ -21,7 +21,7 @@ public abstract class AbsTableHdfs extends Configured implements Tool {
   protected Random r = new Random();
   protected long now = 1373221800000L;
   protected int maxInt = 2000000;
-  protected String defaultFilePatStr = "testtable";
+  protected String defaultFilePathStr = "testtable";
   protected long defaultRowN = 1000000L;
 
   static final char sep = (char) 1;
@@ -69,7 +69,7 @@ public abstract class AbsTableHdfs extends Configured implements Tool {
     StringBuilder sb = new StringBuilder();
     String filePathStr;
     if (args.length == 0) {
-      filePathStr = defaultFilePatStr;
+      filePathStr = defaultFilePathStr;
     } else {
       filePathStr = args[0];
     }
