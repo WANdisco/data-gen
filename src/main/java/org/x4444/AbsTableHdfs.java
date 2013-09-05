@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Random;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.time.FastDateFormat;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.FSDataOutputStream;
@@ -23,6 +24,7 @@ public abstract class AbsTableHdfs extends Configured implements Tool {
   protected int maxInt = 2000000;
   protected String defaultFilePathStr = "testtable";
   protected long defaultRowN = 1000000L;
+  FastDateFormat fdf = FastDateFormat.getInstance("yyyy-MM-dd HH:mm:ss.SSS");
 
   static final char sep = (char) 1;
 
@@ -31,6 +33,14 @@ public abstract class AbsTableHdfs extends Configured implements Tool {
 
   protected int getIntCol() {
     return r.nextInt(maxInt);
+  }
+
+  protected long getLongCol() {
+    return r.nextLong();
+  }
+
+  protected double getDoubleCol() {
+    return r.nextDouble() * 1000000D;
   }
 
   protected String getStringCol(List<String> list) {
@@ -51,6 +61,12 @@ public abstract class AbsTableHdfs extends Configured implements Tool {
       sb.append(d1);
     }
     return sb.toString();
+  }
+
+  protected String getTimestamp() {
+    long v = now - r.nextInt(1000);
+    String d = fdf.format(v);
+    return d;
   }
 
   protected List<String> readFile(String name) {

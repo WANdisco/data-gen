@@ -73,3 +73,14 @@ GROUP BY
   PS_Col51_1_DAY.Col51_1_2,
   PS_Col51_1_DAY.Col51_1_3
 ORDER BY C23;
+
+
+
+set mapred.reduce.tasks=10;
+set mapred.reduce.tasks.speculative.execution=false;
+drop table tj;
+create table tj as 
+explain select a.k1name, b.* 
+from tableb2 b left outer join tablea a on (b.k1 = a.k1)
+where b.p='100k';
+
